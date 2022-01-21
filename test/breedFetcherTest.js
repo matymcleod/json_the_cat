@@ -1,6 +1,6 @@
 const { fetchBreedDescription } = require('../breedFetcher');
 const { assert } = require('chai');
-
+// Run tests outside of test directory with 'npx mocha'
 describe('fetchBreedDescription', () => {
   it('returns a string description for a valid breed, via callback', (done) => {
     fetchBreedDescription('Siberian', (err, desc) => {
@@ -15,6 +15,7 @@ describe('fetchBreedDescription', () => {
       done();
     });
   });
+
   it('returns a error when invalid breed', (done) => {
     fetchBreedDescription('terr', (err, desc) => {
       assert.equal(err, err);
